@@ -1,8 +1,5 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -10,93 +7,78 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private PlayerStats playerStats;
     [SerializeField] private LayerMask ground;
 
-    private Vector3 velocity, moveDampVelocity, forceVelocity;
-    private bool onGround, isRunning;
+    private Vector3 velocity;
+    private Vector3 moveDampVelocity;
+    private Vector3 forceVelocity;
+
+    private Vector2 playerInput;
+
+    private bool onGround;
+    private bool isRunning;
 
     public bool IsGrounded => onGround;
     public bool IsRunning => isRunning;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
     void Update()
     {
-        Move();
-        Jump();
+        GroundCheck();
 
-        charCon.Move(velocity * Time.deltaTime);
+        ApplyGravity();
+
+        MovePlayer();
     }
 
-    private void Jump()
+    void GroundCheck()
     {
         Ray ray = new Ray(transform.position, -transform.up);
+        onGround = Physics.Raycast(ray, 1.2f, ground);
 
-        if (Physics.Raycast(ray, 1.2f, ground))
+        if (onGround && forceVelocity.y < 0)
         {
             forceVelocity.y = -2f;
-            onGround = true;
-
-            if (Input.GetKey(KeyCode.Space))
-            {
-                forceVelocity.y = playerStats.jumpForce;
-
-                //// Add a little bit of movement direction to jumping
-                //Vector3 lookDir = transform.forward;
-                //lookDir.y = 0;
-                //lookDir = lookDir.normalized;
-                //Vector3 charVel = charCon.velocity;
-                //charVel.y = 0;
-                //charVel = charVel.normalized;
-
-                //Vector3 moveDir = Vector3.Slerp(lookDir, charVel, .5f);
-
-                //forceVelocity += moveDir.normalized;
-
-                onGround = false;
-            }
         }
-        else
-        {
-            onGround = false;
-            float gravityStrength = 9.81f * 2;
-            forceVelocity.y -= gravityStrength * Time.deltaTime;
-        }
-
-        if (onGround)
-        {
-            forceVelocity = Vector3.Lerp(Vector3.up * -2, forceVelocity, Mathf.Pow(.5f, Time.deltaTime * 10));
-        }
-
-        charCon.Move(forceVelocity * Time.deltaTime);
     }
 
-    private void Move()
+    void ApplyGravity()
     {
-        Vector3 PlayerInput = new Vector3
-         (
-             Input.GetAxisRaw("Horizontal"),
-             0f,
-             Input.GetAxisRaw("Vertical")
-         ).normalized;
+        forceVelocity.y += Physics.gravity.y * Time.deltaTime * 2;
+    }
 
-        Vector3 moveVector = transform.TransformDirection(PlayerInput);
+    void MovePlayer()
+    {
+        float speed = isRunning ? playerStats.playerRunSpeed : playerStats.playerWalkSpeed;
 
-        bool ctrlPressed = Input.GetKey(KeyCode.LeftControl);
-        isRunning = ctrlPressed;
+        Vector3 moveDir = transform.TransformDirection(new Vector3(playerInput.x, 0, playerInput.y));
 
-        float CurrentSpeed = (ctrlPressed) ? playerStats.playerRunSpeed : playerStats.playerWalkSpeed;
+        moveDir = Vector3.ClampMagnitude(moveDir, 1f);
 
-
-        velocity = Vector3.SmoothDamp
-        (
+        velocity = Vector3.SmoothDamp(
             velocity,
-            moveVector * CurrentSpeed,
+            moveDir * speed,
             ref moveDampVelocity,
             playerStats.moveSmoothTime
         );
+
+        Vector3 finalMove = velocity + forceVelocity;
+
+        charCon.Move(finalMove * Time.deltaTime);
+    }
+
+    public void Move(InputAction.CallbackContext context)
+    {
+        playerInput = context.ReadValue<Vector2>();
+    }
+
+    public void Jump(InputAction.CallbackContext context)
+    {
+        if (context.performed && onGround)
+        {
+            forceVelocity.y = playerStats.jumpForce;
+        }
+    }
+
+    public void SetSprint(InputAction.CallbackContext context)
+    {
+        isRunning = context.control.IsPressed() && playerInput.sqrMagnitude > 0;
     }
 }

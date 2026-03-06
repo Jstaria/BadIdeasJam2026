@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(PositionFollow))]
 
@@ -26,22 +28,16 @@ public class ViewBobbing : MonoBehaviour
         originalOffset = followTarget.Offset;
     }
 
-    void Update()
+    public void SetSprint(InputAction.CallbackContext context)
     {
-        Vector3 PlayerInput = new Vector3(Input.GetAxisRaw("Horizontal"), 0f, Input.GetAxisRaw("Vertical"));
+        currentEffectSpeed = effectSprintSpeed;
+        currentIntensity = effectSprintIntensity;
+        currentIntensityX = Mathf.Lerp(currentIntensityX, effectSprintIntensityX, .1f);
+    }
 
-        if (Input.GetKey(KeyCode.LeftControl))
-        {
-            currentEffectSpeed = effectSprintSpeed;
-            currentIntensity = effectSprintIntensity;
-            currentIntensityX = Mathf.Lerp(currentIntensityX, effectSprintIntensityX, .1f); ;
-        }
-        else 
-        {
-            currentIntensity = effectIntensity;
-            currentEffectSpeed = effectSpeed; 
-            currentIntensityX = Mathf.Lerp(currentIntensityX, effectIntensityX, .1f); 
-        }
+    public void OnMove(InputAction.CallbackContext context)
+    {
+        Vector3 PlayerInput = context.ReadValue<Vector2>();
 
         if (PlayerInput.magnitude > 0)
         {
@@ -73,5 +69,9 @@ public class ViewBobbing : MonoBehaviour
         };
 
         followTarget.Offset += sinAmountX;
+
+        currentIntensity = effectIntensity;
+        currentEffectSpeed = effectSpeed;
+        currentIntensityX = Mathf.Lerp(currentIntensityX, effectIntensityX, .1f);
     }
 }

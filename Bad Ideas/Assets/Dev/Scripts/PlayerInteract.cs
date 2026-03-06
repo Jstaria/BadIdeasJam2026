@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 public enum CursorStatus
@@ -20,6 +21,7 @@ public class PlayerInteract : MonoBehaviour
     [SerializeField] private Image cursor;
 
     private float clickTimer;
+    private RaycastHit hit;
 
     public CursorStatus CursorStatus {  get; private set; }
 
@@ -34,21 +36,10 @@ public class PlayerInteract : MonoBehaviour
 
         if (Physics.Raycast(ray, out hit, stats.interactDistance, interactable))
         {
+            this.hit = hit;
+
             if (clickTimer < 0)
                 CursorStatus = CursorStatus.Hovering;
-
-            if (Input.GetMouseButtonDown(0))
-            {
-                clickTimer = stats.clickTimer;
-
-                CursorStatus = CursorStatus.Clicked;
-
-                Transform transform = hit.transform;
-
-                Interactable interactable = transform.GetComponentInChildren<Interactable>();
-
-                interactable.InteractWith();
-            }
         }
 
         clickTimer -= Time.deltaTime;
@@ -67,5 +58,18 @@ public class PlayerInteract : MonoBehaviour
                 cursor.sprite = stats.CursorSprite;
                 break;
         }     
+    }
+
+    public void OnInteract(InputAction.CallbackContext context)
+    {
+        if (!context.started) return;
+
+        if (CursorStatus == CursorStatus.Hovering && clickTimer <= 0)
+        {
+            clickTimer = stats.clickTimer;
+            CursorStatus = CursorStatus.Clicked;
+
+            hit.collider.GetComponent<Interactable>()?.InteractWith();
+        }
     }
 }

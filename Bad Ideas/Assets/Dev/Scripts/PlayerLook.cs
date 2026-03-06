@@ -2,11 +2,13 @@ using QFSW.QC;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerLook : MonoBehaviour
 {
     [SerializeField] private Transform PlayerCamera;
     [SerializeField] private PlayerStats playerStats;
+    [SerializeField] private AnimationCurve mouseSensitivityCurve;
 
     private Vector2 XYRotation;
 
@@ -22,7 +24,7 @@ public class PlayerLook : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    public void OnMouseMove(InputAction.CallbackContext context)
     {
         if (QuantumConsole.Instance.IsActive /*|| Menu.Instance.IsPaused*/)
         {
@@ -39,10 +41,10 @@ public class PlayerLook : MonoBehaviour
         Cursor.lockState = QuantumConsole.Instance.IsActive ? CursorLockMode.None : CursorLockMode.Locked;
         Cursor.visible = QuantumConsole.Instance.IsActive;
 
-        Vector2 MouseInput = new Vector2(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y"));
+        Vector2 MouseInput = context.ReadValue<Vector2>();
 
-        XYRotation.x -= MouseInput.y * playerStats.sensitivity.y;
-        XYRotation.y += MouseInput.x * playerStats.sensitivity.x;
+        XYRotation.x -= MouseInput.y * mouseSensitivityCurve.Evaluate(playerStats.sensitivity.y);
+        XYRotation.y += MouseInput.x * mouseSensitivityCurve.Evaluate(playerStats.sensitivity.x);
 
         XYRotation.x = Mathf.Clamp(XYRotation.x, -75f, 75f);
 

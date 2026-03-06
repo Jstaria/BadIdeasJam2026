@@ -1,3 +1,4 @@
+using Unity.Collections;
 using UnityEditor.Animations;
 using UnityEngine;
 
@@ -10,7 +11,8 @@ public enum PuzzleState
 public class Platform : MonoBehaviour
 {
     [SerializeField] private Animator floorTileAnimator;
-    [SerializeField] private Transform puzzleCenter;
+    [SerializeField] public Transform puzzleCenter;
+    [SerializeField] private GameObject instantiatedPuzzlePrefab;
 
     public void LowerPlatformAnim(PuzzleState state)
     {
@@ -32,13 +34,19 @@ public class Platform : MonoBehaviour
     /// <summary>
     /// Spawns puzzle on platform center
     /// </summary>
-    internal void GetPuzzle()
+    public void GetPuzzle()
     {
         Debug.Log("GetPuzzle called");
+        PuzzleManager.Instance.GetPuzzle(this, out instantiatedPuzzlePrefab);
     }
 
-    internal void DespawnPuzzle()
+    public void DespawnPuzzle()
     {
         Debug.Log("DespawnPuzzle called");
+        if (instantiatedPuzzlePrefab != null)
+        {
+            Destroy(instantiatedPuzzlePrefab);
+            instantiatedPuzzlePrefab = null;
+        }
     }
 }

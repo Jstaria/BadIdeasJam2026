@@ -1,0 +1,11 @@
+Model Information:
+* title:	Top Hat
+* source:	https://sketchfab.com/3d-models/top-hat-959430b632f642cb9b732b9cd4b63751
+* author:	Mug (https://sketchfab.com/1Mug)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Top Hat" (https://sketchfab.com/3d-models/top-hat-959430b632f642cb9b732b9cd4b63751) by Mug (https://sketchfab.com/1Mug) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

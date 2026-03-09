@@ -8,6 +8,7 @@ public class LookAtPOI : MonoBehaviour
     [SerializeField] private float detectionRange;
     [SerializeField] private MultiAimConstraint constraint;
     [SerializeField] private Transform sourceOBJ;
+    [SerializeField] private float LookSpeed;
 
     private Vector3 targetPosition;
     [SerializeField] private Vector3 defaultPositionOffset;
@@ -22,6 +23,6 @@ public class LookAtPOI : MonoBehaviour
             targetPosition = tr.position;
 
 
-            sourceOBJ.position = Vector3.Slerp(targetPosition, sourceOBJ.position, Mathf.Pow(.5f, Time.deltaTime * 10));
+            sourceOBJ.position = Vector3.Slerp(targetPosition, sourceOBJ.position, Mathf.Pow(.5f, Time.deltaTime * LookSpeed));
     }
 }

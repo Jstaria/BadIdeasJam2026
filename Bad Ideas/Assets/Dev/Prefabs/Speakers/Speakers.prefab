@@ -121,7 +121,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3510026304089608781}
-  - component: {fileID: 7931314083847925357}
+  - component: {fileID: 500721717258067587}
   m_Layer: 0
   m_Name: Speakers
   m_TagString: Untagged
@@ -147,103 +147,58 @@ Transform:
   - {fileID: 1781153472358488333}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!82 &7931314083847925357
-AudioSource:
+--- !u!114 &500721717258067587
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3802289220131742247}
   m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 0}
-  m_PlayOnAwake: 1
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0.75
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5be629f696ffc7b4dbfba1d3668f0e43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SpeakerCon
+  stretchAmount: 0.9
+  squashAmount: 1.15
+  animationSpeed: 0.1
+  grooveCurve:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
       time: 0
       value: 0
-      inSlope: 0
-      outSlope: 0
+      inSlope: 15.3735895
+      outSlope: 15.3735895
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
+      inWeight: 0
+      outWeight: 0.039461914
     - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
+      time: 0.31544125
+      value: 0.86375475
+      inSlope: 1.8225491
+      outSlope: 1.8225491
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
       outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.9958333
+      value: -0.0000000146683306
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  animationOffset: 0
+  subCons:
+  - {fileID: 9118433008690797887}
+  - {fileID: 2818935504639513928}
 --- !u!1 &6698267659413674335
 GameObject:
   m_ObjectHideFlags: 0
@@ -256,6 +211,7 @@ GameObject:
   - component: {fileID: 4845327479348144}
   - component: {fileID: 3375703638257252329}
   - component: {fileID: 7566005977200180077}
+  - component: {fileID: 9118433008690797887}
   m_Layer: 0
   m_Name: Cylinder
   m_TagString: Untagged
@@ -358,6 +314,56 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
+--- !u!114 &9118433008690797887
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6698267659413674335}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5be629f696ffc7b4dbfba1d3668f0e43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SpeakerCon
+  stretchAmount: 1
+  squashAmount: 1.25
+  animationSpeed: 0.5
+  grooveCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 15.3735895
+      outSlope: 15.3735895
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.039461914
+    - serializedVersion: 3
+      time: 0.31544125
+      value: 0.86375475
+      inSlope: 1.8225491
+      outSlope: 1.8225491
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.9958333
+      value: -0.0000000146683306
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  animationOffset: -0.05
+  subCons: []
 --- !u!1 &7352775550463431487
 GameObject:
   m_ObjectHideFlags: 0
@@ -370,6 +376,7 @@ GameObject:
   - component: {fileID: 6786048496095057654}
   - component: {fileID: 1237591995822867845}
   - component: {fileID: 5687894070474697928}
+  - component: {fileID: 2818935504639513928}
   m_Layer: 0
   m_Name: Cylinder (1)
   m_TagString: Untagged
@@ -472,3 +479,53 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
+--- !u!114 &2818935504639513928
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7352775550463431487}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5be629f696ffc7b4dbfba1d3668f0e43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SpeakerCon
+  stretchAmount: 1
+  squashAmount: 1.25
+  animationSpeed: 0.5
+  grooveCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 15.3735895
+      outSlope: 15.3735895
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.039461914
+    - serializedVersion: 3
+      time: 0.31544125
+      value: 0.86375475
+      inSlope: 1.8225491
+      outSlope: 1.8225491
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.9958333
+      value: -0.0000000146683306
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  animationOffset: -0.1
+  subCons: []

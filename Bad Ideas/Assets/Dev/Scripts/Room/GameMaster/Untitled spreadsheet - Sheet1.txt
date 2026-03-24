@@ -1,0 +1,3 @@
+Intro	Welcome!	How are you this fine evening...	Just kidding, I dont care!
+FirstPuzzle	So this is your first puzzle, its {Insert puzzle name}	You'll be having so much fun here!	
+SecondPuzzle	...	Organize them again please	

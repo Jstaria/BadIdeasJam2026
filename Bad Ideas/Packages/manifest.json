@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "com.noesis.noesisgui": "file:C:/Users/wforb/OneDrive/Documents/GitHub/GameJam26/NoesisGUI-Unity-3.2.12-Indie",
     "com.unity.ai.navigation": "2.0.10",
     "com.unity.animation.rigging": "1.4.1",
     "com.unity.collab-proxy": "2.11.3",

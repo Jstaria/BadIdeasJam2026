@@ -33,7 +33,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: ceiling
-    second: {fileID: 2100000, guid: 26c72a05b3ecb63498bf55c210897975, type: 2}
+    second: {fileID: 2100000, guid: 47905bc8bd016524db2e8eca8a5c4e2a, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule

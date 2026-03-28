@@ -1,3 +1,4 @@
-Intro	Welcome!	How are you this fine evening...	Just kidding, I dont care!
+Intro	Welcome!	How are you this fine evening...	Just kidding, I dont care!	To be honest, I dont even know why you are here, but I guess you are here to have fun, right?	Well, I hope you do!
+PressButton	Press the button again to start the game!
 FirstPuzzle	So this is your first puzzle, its {Insert puzzle name}	You'll be having so much fun here!	
 SecondPuzzle	...	Organize them again please	

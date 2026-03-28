@@ -7,6 +7,7 @@ using UnityEngine.Events;
 public class MyButton : MonoBehaviour
 {
     [SerializeField] private float buttonTimeoutDuration = 1;
+    [SerializeField] private bool canReEnable = false;
 
     [Header("Component References")]
     [SerializeField] private Transform button;
@@ -100,8 +101,11 @@ public class MyButton : MonoBehaviour
 
         yield return new WaitForSeconds(buttonTimeoutDuration);
         
-        swapMaterial.Switch(1);
-        Enable();
+        if (canReEnable)
+        {
+            swapMaterial.Switch(1);
+            Enable();
+        }
     }
 
     public void Disable() => isDisabled = true;

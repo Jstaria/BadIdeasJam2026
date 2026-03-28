@@ -36290,6 +36290,14 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: e6b6d9049ab7bf443beaf336a3f6309a, type: 2}
+    - target: {fileID: -5152499306618630550, guid: b9757d5d17fee024f9b84dbd56d50c94, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 05f10f54c88d16c448e2b1b9f6ed9912, type: 2}
+    - target: {fileID: -5152499306618630550, guid: b9757d5d17fee024f9b84dbd56d50c94, type: 3}
+      propertyPath: 'm_Materials.Array.data[2]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 3c617365f8b92f2479510b38a4ee6a6b, type: 2}
     - target: {fileID: 919132149155446097, guid: b9757d5d17fee024f9b84dbd56d50c94, type: 3}
       propertyPath: m_Name
       value: puzzle room hallway

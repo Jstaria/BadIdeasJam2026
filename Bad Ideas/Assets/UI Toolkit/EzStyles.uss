@@ -1,10 +1,6 @@
 :root {
 }
 
-
-
-
-
 .currentStyle {
     right: 10%;
     width: 40%;
@@ -18,6 +14,9 @@
     border-bottom-left-radius: 4px;
     margin-top: 4px;
     margin-bottom: 4px;
+    font-size: 15px;
+    color: rgb(0, 0, 0);
+    -unity-text-outline-color: rgba(0, 0, 0, 0);
 }
 
 .currentStyle:hover {

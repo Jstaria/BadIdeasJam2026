@@ -1,0 +1,18 @@
+Beginning	AH, finally awake.	Lets make sure your neck still works. Can you look around with (Mouse)?						
+MouseMovement	Beautiful neck muscles. How bout your legs? Stretch them a bit and walk around your room for me using (WASD)							
+WASDinput	Baby's first steps!! Adorable. I bet you can click things too. Take that little hand of yours and try pressing the button with (E). I want to show you something special							
+FIrstButtonPress	Such dexterious fingers! But I digress... 	Welcome to the show! I'm up here! To your right!	I hope you are ready to put those human braincells to work and please our audience here!	Audience, wave hiii! 	*Haha* not like you would be able to see them anyway but they are waving right now.	Due to the severity of your crimes your sentence is to play with me! How exciting for you!	But don't worry. Complete all the puzzles, please the audience and you will be granted your freedom!	Ready to get started? Press the button again to start the first puzzle!
+StartPuzzle1	For puzzle #1....	You will be stacking cylinders!	I can't read so I have do idea which way you'd have to stack them	All I know is that those lights should turn green.	Good luck!			
+5minTimer	Heh... hey prisoner, what are you doing. I figuered you'd be done by now...	Better hurry up. You're boring the audience!						
+Puzzle1Solved	There we go! Great stacking skills prisoner!	Return to your bedroom and press the button for the next Puzzle!	I'm not quite done with you yet! 3 more puzzles to go!					
+StartPuzzle2	For this puzzle you have to build a...	...Oh	I guess someone already built a tower. This is embarassing	Well I hope SOMEONE with arms and feet could fix this for me				
+TowerKnockedOver	OH!	Look at that! Your destructive nature has come to be useful!	Your task is to.... sort the blocks of the tower you so malliciously wrecked. Yeah	Good luck!				
+5minTimer2	You're not blind are you?	That would be unfortunate for our audience.	Speaking of, they say to go faster.					
+Puzzle2Solved	Perfect! All my blocks in their proper place	Time to move your butt out of the puzzle room and press that button!	Halfway to freedom for you!	The audience is very impressed				
+StartPuzzle3	Off we go to puzzle 3!	I think you'll be quite fond of this one	It's very simple really. Pop all of the balloons with your darts!	Make sure to stay on the X! We don't want any dart related accidents...				
+5minTimer3	Its really not that hard... Better lock in!	Part of me thinks you're TRYING to waste our time	The audience is very unhappy with these results- or rather, lack there of					
+Puzzle3Solved	Ah! Look at my little shooting champian!	Now press that button and you're that much closer to freedom!	Come on off the puzzle room now!					
+StartPuzzle4	Are you ready for your final puzzle?	I shouldn't have to explain this one. But hurry up! the audience is waiting!						
+5minTimer4	It seems you're having some trouble	Remember, lazy players aren't granted freedom!						
+Puzzle4Failed	Aww... too bad. I really thought you had that one...	Welp, it was a pleasure to be your ring master but now I believe it's your time to die!	Wave goodbye to the audience!	Executing prisoner #4630893				
+DartAtRingMaster	AH WHAT HAPPENED	I CAN'T SEE	wait....	... don't leave me here like this...	... I don't want to be alone...			

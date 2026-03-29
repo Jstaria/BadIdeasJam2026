@@ -3,7 +3,12 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 3
-  tags: []
+  tags:
+  - BlueBlock
+  - GreenBlock
+  - RedBlock
+  - YellowBlock
+  - Balloon
   layers:
   - Default
   - TransparentFX
@@ -12,7 +17,7 @@ TagManager:
   - Water
   - UI
   - Interactable
-  - 
+  - Player
   - 
   - 
   - 

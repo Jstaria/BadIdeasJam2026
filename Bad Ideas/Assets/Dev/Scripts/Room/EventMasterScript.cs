@@ -40,6 +40,9 @@ public class EventMasterScript : MonoBehaviour
 
         events.Add("StartPuzzle2", new UnityEvent());
         events["StartPuzzle2"].AddListener(StartPuzzle2);
+
+        events.Add("StartPuzzle3", new UnityEvent());
+        events["StartPuzzle3"].AddListener(StartPuzzle3);
     }
 
     public void EnterRoom()
@@ -125,12 +128,31 @@ public class EventMasterScript : MonoBehaviour
 
     private IEnumerator StartPuzzle2Coroutine()
     {
+        speech.PlayDialogue("StartPuzzle2");
+
         yield return SpinCarousel();
 
         doors["door2"].OpenDoor();
 
         button.OnButtonPress = new();
         button.OnButtonPress.AddListener(() => StartEvent("StartPuzzle3"));
+    }
+
+    public void StartPuzzle3()
+    {
+        StartCoroutine(StartPuzzle3Coroutine());
+    }
+
+    private IEnumerator StartPuzzle3Coroutine()
+    {
+        speech.PlayDialogue("StartPuzzle3");
+
+        yield return SpinCarousel();
+
+        doors["door3"].OpenDoor();
+
+        button.OnButtonPress = new();
+        button.OnButtonPress.AddListener(() => StartEvent("StartPuzzle4"));
     }
 
     private IEnumerator SpinCarousel()

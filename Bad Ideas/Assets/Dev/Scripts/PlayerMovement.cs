@@ -1,3 +1,4 @@
+using Mono.CSharp;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -18,6 +19,8 @@ public class PlayerMovement : MonoBehaviour
 
     public bool IsGrounded => onGround;
     public bool IsRunning => isRunning;
+
+    public bool Moved => charCon.velocity.sqrMagnitude > 0;
 
     void Update()
     {

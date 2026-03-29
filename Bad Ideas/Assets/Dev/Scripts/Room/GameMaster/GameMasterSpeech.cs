@@ -29,8 +29,9 @@ public class GameMasterSpeech : MonoBehaviour
     [SerializeField] private float maxPitchFlux;
     [SerializeField] private float dialogueCDFlux;
     [SerializeField] private float dialogueCooldown;
+    [SerializeField] private float inbetweenCD = 2;
     [SerializeField] private AudioSource audioSource;
-
+    [SerializeField] private string dialogueStart = "Beginning";
     private Dictionary<string, List<string>> Dialogues;
     private Coroutine dialogueCoroutine;
     private Spring textPanelSpring;
@@ -41,7 +42,7 @@ public class GameMasterSpeech : MonoBehaviour
     {
         LoadText();
 
-        PlayDialogue("Intro");
+        PlayDialogue(dialogueStart);
     }
 
     // Update is called once per frame
@@ -81,7 +82,7 @@ public class GameMasterSpeech : MonoBehaviour
             {
                 ue?.Invoke();
             }
-            yield return new WaitForSeconds(2);
+            yield return new WaitForSeconds(inbetweenCD);
         }
 
         StopCoroutine(textPanel);

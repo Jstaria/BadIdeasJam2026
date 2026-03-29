@@ -1,0 +1,9 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI%20Toolkit/EzStyles.uss?fileID=7433441132597879392&amp;guid=c0181bd81e6deee4f82a83bfae623a19&amp;type=3#EzStyles"/>
+    <ui:VisualElement name="VisualElement" enabled="true" style="flex-grow: 1; opacity: 1; -unity-background-scale-mode: scale-and-crop; align-self: auto; background-color: rgb(0, 0, 0); align-items: center; justify-content: center; flex-direction: column; align-content: auto;">
+        <ui:Label text="_Game Name_" name="ResumeText" style="width: 438px; height: 111px; background-color: rgba(56, 56, 56, 0); border-left-color: rgb(95, 95, 95); border-right-color: rgb(95, 95, 95); border-top-color: rgb(95, 95, 95); border-bottom-color: rgb(95, 95, 95); color: rgb(255, 255, 255); -unity-text-align: middle-center; white-space: nowrap; font-size: 70%; -unity-text-auto-size: none; justify-content: flex-start; align-self: center; -unity-text-outline-color: rgba(56, 56, 56, 0); -unity-background-image-tint-color: rgb(35, 35, 35); -unity-text-generator: standard; margin-bottom: 7%;"/>
+        <ui:Button text="Start" name="ResumeButton" class="currentStyle"/>
+        <ui:Button text="Settings" name="SettingsButton" class="currentStyle"/>
+        <ui:Button text="Quit" name="QuitButton" class="currentStyle"/>
+    </ui:VisualElement>
+</ui:UXML>

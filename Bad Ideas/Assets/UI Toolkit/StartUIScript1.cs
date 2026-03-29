@@ -2,8 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
+using UnityEngine.SceneManagement;
 
-public class UsingButtons : MonoBehaviour
+public class StartUIScript : MonoBehaviour
 {
     private Button resumeButton;
     private Button restartButton;
@@ -26,14 +27,31 @@ public class UsingButtons : MonoBehaviour
         quitButton.RegisterCallback<ClickEvent>(OnQuitButtonClicked);
     }
 
-    
+    private void Update()
+    {
+        /*
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (gameObject == false)
+            {
+                gameObject.SetActive(true);
+            }
+            else
+            {
+                gameObject.SetActive(false);
+            }
+        }
+        */
+    }
     private void OnResumeButtonClicked(ClickEvent clickEvent)
     {
         Debug.Log("Resuming Game");
+        gameObject.SetActive(false);
     }
     private void OnRestartButtonClicked(ClickEvent clickEvent)
     {
         Debug.Log("Restarting Level");
+        //SceneManager.LoadScene("_Name of Scene_");
     }
     private void OnSettingsButtonClicked(ClickEvent clickEvent)
     {
@@ -42,6 +60,7 @@ public class UsingButtons : MonoBehaviour
     private void OnQuitButtonClicked(ClickEvent clickEvent)
     {
         Debug.Log("Quiting Game");
+        Application.Quit();
     }
 
 }

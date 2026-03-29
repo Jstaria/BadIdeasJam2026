@@ -2,51 +2,61 @@
 }
 
 .currentStyle {
-    right: 10%;
-    width: 40%;
-    height: 10%;
-    align-content: flex-start;
-    align-self: flex-end;
-    align-items: stretch;
     border-top-left-radius: 4px;
     border-top-right-radius: 4px;
     border-bottom-right-radius: 4px;
     border-bottom-left-radius: 4px;
-    margin-top: 4px;
-    margin-bottom: 4px;
-    font-size: 35%;
-    color: rgb(0, 0, 0);
-    -unity-text-outline-color: rgba(0, 0, 0, 0);
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 250%;
+    color: rgb(255, 255, 255);
+    -unity-text-outline-color: rgba(255, 255, 255, 0);
+    width: 40%;
+    height: 10%;
+    background-image: url("project://database/Assets/UI%20Toolkit/panoramic-dark-carbon-fiber-texture-with-highlights-vector.jpg?fileID=2800000&guid=745438227fac04c4abc1a50863e4e8b2&type=3#panoramic-dark-carbon-fiber-texture-with-highlights-vector");
+    -unity-background-image-tint-color: rgb(161, 161, 161);
+    background-color: rgba(255, 255, 255, 0);
+    border-left-color: rgba(0, 0, 0, 0);
+    border-right-color: rgba(0, 0, 0, 0);
+    border-top-color: rgba(0, 0, 0, 0);
+    border-bottom-color: rgba(0, 0, 0, 0);
 }
 
+
+
+
+
 .currentStyle:hover {
-    right: 10%;
-    width: 40%;
-    height: 10%;
-    align-content: flex-start;
-    align-self: flex-end;
-    align-items: stretch;
     border-top-left-radius: 4px;
     border-top-right-radius: 4px;
     border-bottom-right-radius: 4px;
     border-bottom-left-radius: 4px;
-    margin-top: 4px;
-    margin-bottom: 4px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 250%;
+    color: rgb(255, 255, 255);
+    -unity-text-outline-color: rgba(255, 255, 255, 0);
+    width: 40%;
+    height: 10%;
+    background-image: url("project://database/Assets/UI%20Toolkit/panoramic-dark-carbon-fiber-texture-with-highlights-vector.jpg?fileID=2800000&guid=745438227fac04c4abc1a50863e4e8b2&type=3#panoramic-dark-carbon-fiber-texture-with-highlights-vector");
+    -unity-background-image-tint-color: rgb(255, 255, 255);
+    background-color: rgba(255, 255, 255, 0);
     scale: 1.1 1.1;
 }
 
 .currentStyle:active {
-    right: 10%;
-    width: 40%;
-    height: 10%;
-    align-content: flex-start;
-    align-self: flex-end;
-    align-items: stretch;
     border-top-left-radius: 4px;
     border-top-right-radius: 4px;
     border-bottom-right-radius: 4px;
     border-bottom-left-radius: 4px;
-    margin-top: 4px;
-    margin-bottom: 4px;
-    background-color: rgb(109, 109, 109);
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 250%;
+    color: rgb(255, 255, 255);
+    -unity-text-outline-color: rgba(255, 255, 255, 0);
+    width: 40%;
+    height: 10%;
+    background-image: url("project://database/Assets/UI%20Toolkit/panoramic-dark-carbon-fiber-texture-with-highlights-vector.jpg?fileID=2800000&guid=745438227fac04c4abc1a50863e4e8b2&type=3#panoramic-dark-carbon-fiber-texture-with-highlights-vector");
+    -unity-background-image-tint-color: rgb(255, 169, 169);
+    background-color: rgba(255, 255, 255, 0);
 }

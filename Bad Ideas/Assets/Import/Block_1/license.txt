@@ -1,0 +1,11 @@
+Model Information:
+* title:	Block 1
+* source:	https://sketchfab.com/3d-models/block-1-32a4316e075f4250b063f3028f3ea4e5
+* author:	Dave Tse (https://sketchfab.com/DaveTse)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Block 1" (https://sketchfab.com/3d-models/block-1-32a4316e075f4250b063f3028f3ea4e5) by Dave Tse (https://sketchfab.com/DaveTse) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

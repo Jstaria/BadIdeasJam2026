@@ -1,43 +1,88 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UIElements;
 using UnityEngine.SceneManagement;
-
+using UnityEngine.UIElements;
+using UnityEngine.InputSystem;
+using Cursor = UnityEngine.Cursor;
+using System.Threading;
 
 public class PauseUIScript : MonoBehaviour
 {
-    private Button startButton;
-    private Button settingsButton;
-    private Button quitButton;
+    [SerializeField] private GameObject root;
+    private bool isPaused;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    void Awake()
     {
-        VisualElement root = GetComponent<UIDocument>().rootVisualElement;
-
-        startButton = root.Q<Button>("ResumeButton");
-        settingsButton = root.Q<Button>("SettingsButton");
-        quitButton = root.Q<Button>("QuitButton");
-
-        startButton.RegisterCallback<ClickEvent>(OnStartButtonClicked);
-        settingsButton.RegisterCallback<ClickEvent>(OnSettingsButtonClicked);
-        quitButton.RegisterCallback<ClickEvent>(OnQuitButtonClicked);
+        root.SetActive(false);
     }
 
-    private void OnStartButtonClicked(ClickEvent clickEvent)
+    public void TogglePause(InputAction.CallbackContext context)
+    {
+        if (!context.performed) return;
+
+        isPaused = !isPaused;
+
+        if (!isPaused)
+        {
+            Time.timeScale = 1f;
+            root.SetActive(false);
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+        }
+        else
+        {
+            Time.timeScale = 0f;
+            root.SetActive(true);
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
+
+        Debug.Log("Toggling Pause");
+    }
+
+    public void TogglePause()
+    {
+        isPaused = !isPaused;
+
+        if (!isPaused)
+        {
+            Time.timeScale = 1f;
+            root.SetActive(false);
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+        }
+        else
+        {
+            Time.timeScale = 0f;
+            root.SetActive(true);
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
+
+        Debug.Log("Toggling Pause");
+    }
+
+    public void OnResumeButtonClicked()
     {
         Debug.Log("Resuming Game");
-        //SceneManager.LoadScene("_Name of Scene_");
-    }
-    private void OnSettingsButtonClicked(ClickEvent clickEvent)
-    {
-        Debug.Log("Opening Settings");
-    }
-    private void OnQuitButtonClicked(ClickEvent clickEvent)
-    {
-        Debug.Log("Quiting Game");
-        Application.Quit();
+        TogglePause();
     }
 
+    public void OnRestartButtonClicked()
+    {
+        Debug.Log("Restarting Scene");
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void OnQuitButtonClicked()
+    {
+        Debug.Log("Quiting Game");
+
+
+
+            Application.Quit();
+
+    }
 }

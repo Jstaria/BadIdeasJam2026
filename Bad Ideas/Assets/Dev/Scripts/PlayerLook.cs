@@ -26,20 +26,7 @@ public class PlayerLook : MonoBehaviour
     // Update is called once per frame
     public void OnMouseMove(InputAction.CallbackContext context)
     {
-        if (QuantumConsole.Instance.IsActive /*|| Menu.Instance.IsPaused*/)
-        {
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
-            return;
-        }
-        else
-        {
-            Cursor.lockState = CursorLockMode.Locked;
-            Cursor.visible = false;
-        }
-
-        Cursor.lockState = QuantumConsole.Instance.IsActive ? CursorLockMode.None : CursorLockMode.Locked;
-        Cursor.visible = QuantumConsole.Instance.IsActive;
+        if (Time.timeScale == 0) return;
 
         Vector2 MouseInput = context.ReadValue<Vector2>();
 

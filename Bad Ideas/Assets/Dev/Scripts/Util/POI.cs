@@ -8,6 +8,12 @@ public class POI : MonoBehaviour
 
     private void Awake()
     {
+        StartCoroutine(AddPOI());
+    }
+
+    private IEnumerator AddPOI()
+    {
+        yield return new WaitForSeconds(2);
         POIManager.Instance.AddPOI(this);
     }
 }

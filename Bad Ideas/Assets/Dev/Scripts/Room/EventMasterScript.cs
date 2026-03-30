@@ -28,6 +28,7 @@ public class EventMasterScript : MonoBehaviour
     [SerializeField] private PlayerMovement playerMovement;
 
     private Dictionary<string, UnityEvent> events;
+    private Coroutine fiveMinTimer;
 
     public void Awake()
     {
@@ -43,6 +44,9 @@ public class EventMasterScript : MonoBehaviour
 
         events.Add("StartPuzzle3", new UnityEvent());
         events["StartPuzzle3"].AddListener(StartPuzzle3);
+
+        events.Add("StartPuzzle4", new UnityEvent());
+        events["StartPuzzle4"].AddListener(StartPuzzle4);
     }
 
     public void EnterRoom()
@@ -117,6 +121,8 @@ public class EventMasterScript : MonoBehaviour
 
         speech.PlayDialogue("StartPuzzle1");
 
+        fiveMinTimer = StartCoroutine(FiveMinTimer("5minTimer"));
+
         button.OnButtonPress = new();
         button.OnButtonPress.AddListener(() => StartEvent("StartPuzzle2"));
     }
@@ -133,6 +139,13 @@ public class EventMasterScript : MonoBehaviour
         yield return SpinCarousel();
 
         doors["door2"].OpenDoor();
+
+        if (fiveMinTimer != null)
+        {
+            StopCoroutine(fiveMinTimer);
+        }
+
+        fiveMinTimer = StartCoroutine(FiveMinTimer("5minTimer2"));
 
         button.OnButtonPress = new();
         button.OnButtonPress.AddListener(() => StartEvent("StartPuzzle3"));
@@ -151,8 +164,41 @@ public class EventMasterScript : MonoBehaviour
 
         doors["door3"].OpenDoor();
 
+        if (fiveMinTimer != null)
+        {
+            StopCoroutine(fiveMinTimer);
+        }
+
+        fiveMinTimer = StartCoroutine(FiveMinTimer("5minTimer3"));
+
         button.OnButtonPress = new();
         button.OnButtonPress.AddListener(() => StartEvent("StartPuzzle4"));
+    }
+    public void StartPuzzle4()
+    {
+        StartCoroutine(StartPuzzle4Coroutine());
+    }
+    private IEnumerator StartPuzzle4Coroutine()
+    {
+        if (fiveMinTimer != null)
+        {
+            StopCoroutine(fiveMinTimer);
+        }
+
+        speech.PlayDialogue("StartPuzzle4");
+        yield return SpinCarousel();
+        doors["door4"].OpenDoor();
+
+        yield return StartCoroutine(FiveMinTimer("5minTimer4", 20));
+
+        yield return StartCoroutine(FiveMinTimer("Puzzle4Failed", 10));
+    }
+
+    private IEnumerator FiveMinTimer(string timerName, int actualTime = 300)
+    {
+        yield return WaitForSeconds(actualTime);
+
+        speech.PlayDialogue(timerName);
     }
 
     private IEnumerator SpinCarousel()

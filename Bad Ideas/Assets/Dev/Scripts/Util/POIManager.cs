@@ -14,6 +14,8 @@ public class POIManager : Singleton<POIManager>
 
     public void AddPOI(POI poi)
     {
+        if (POIList == null)
+            POIList = new();
         POIList.Add(poi);
     }
 

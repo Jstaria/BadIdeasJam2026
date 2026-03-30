@@ -1,10 +1,8 @@
 using AYellowpaper.SerializedCollections;
-using Seagull.Interior_I1.Inspector;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEditor;
-using UnityEditor.TerrainTools;
 using UnityEngine;
 
 [RequireComponent(typeof(AudioSource))]

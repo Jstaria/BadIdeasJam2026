@@ -9,6 +9,7 @@ TagManager:
   - RedBlock
   - YellowBlock
   - Balloon
+  - Dart
   layers:
   - Default
   - TransparentFX

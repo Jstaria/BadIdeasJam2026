@@ -11,7 +11,7 @@ TowerKnockedOver	OH!	Look at that! Your destructive nature has come to be useful
 Puzzle2Solved	Perfect! All my blocks in their proper place	Time to move your butt out of the puzzle room and press that button!	Halfway to freedom for you!	The audience is very impressed				
 StartPuzzle3	Off we go to puzzle 3!	I think you'll be quite fond of this one	It's very simple really. Pop all of the balloons with your darts!	Make sure to stay on the X! We don't want any dart related accidents...				
 5minTimer3	Its really not that hard... Better lock in!	Part of me thinks you're TRYING to waste our time	The audience is very unhappy with these results- or rather, lack there of					
-Puzzle3Solved	Ah! Look at my little shooting champian!	Now press that button and you're that much closer to freedom!	Come on off the puzzle room now!					
+Puzzle3Solved	Ah! Look at my little shooting champion!	Now press that button and you're that much closer to freedom!	Come on off the puzzle room now!					
 StartPuzzle4	Are you ready for your final puzzle?	I shouldn't have to explain this one. But hurry up! the audience is waiting!						
 5minTimer4	It seems you're having some trouble	Remember, lazy players aren't granted freedom!						
 Puzzle4Failed	Aww... too bad. I really thought you had that one...	Welp, it was a pleasure to be your ring master but now I believe it's your time to die!	Wave goodbye to the audience!	Executing prisoner #4630893				

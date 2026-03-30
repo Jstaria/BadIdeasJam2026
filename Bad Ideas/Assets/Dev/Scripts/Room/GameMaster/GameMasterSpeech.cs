@@ -16,6 +16,7 @@ public class GameMasterSpeech : MonoBehaviour
     [SerializeField] private SerializedDictionary<string, AudioClip> speechSounds;
     [SerializedDictionary("<Dialogue Option, Text Index>", "Speech Sound")]
     [SerializeField] private SerializedDictionary<SerializedKeyValuePair<string, int>, AudioClip> specificSpeechSounds;
+    [SerializeField] private AudioClip defaultSpeechSound;
     [SerializeField] private TextMeshProUGUI tmp;
     [SerializeField] private RectTransform dialoguePanel;
     [SerializeField] private TextAsset dialogueTextFile;
@@ -72,7 +73,11 @@ public class GameMasterSpeech : MonoBehaviour
             UnityEvent ue;
             tmp.text = "";
 
-            AudioClip clip = speechSounds[name];
+
+            AudioClip clip = defaultSpeechSound;
+
+            if (speechSounds.TryGetValue(name, out AudioClip generalClip))
+                clip = generalClip;
             if (specificSpeechSounds.TryGetValue(new SerializedKeyValuePair<string, int>(name, i), out AudioClip specificClip))
                 clip = specificClip;
 

@@ -8,9 +8,15 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/RoomTestScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/JoeTestScene.unity
     guid: 07ad01af58525d54c9e45d25e99f4e10
+  - enabled: 1
+    path: Assets/Scenes/Menu.unity
+    guid: 380c04e5b4b37cc44b53179f721a1436
+  - enabled: 1
+    path: Assets/Scenes/Game.unity
+    guid: 8c25f4418d9d3764ea92634ae29891ef
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 735090ad0d1ff7e468537864d2c91a33, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}

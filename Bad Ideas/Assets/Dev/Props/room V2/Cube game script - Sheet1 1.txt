@@ -14,5 +14,5 @@ StartPuzzle3	Off we go to puzzle 3!	I think you'll be quite fond of this one	It'
 Puzzle3Solved	Ah! Look at my little shooting champion!	Now press that button and you're that much closer to freedom!	Come on off the puzzle room now!					
 StartPuzzle4	Are you ready for your final puzzle?	I shouldn't have to explain this one. But hurry up! the audience is waiting!						
 5minTimer4	It seems you're having some trouble	Remember, lazy players aren't granted freedom!						
-Puzzle4Failed	Aww... too bad. I really thought you had that one...	Welp, it was a pleasure to be your ring master but now I believe it's your time to die!	Wave goodbye to the audience!	Executing prisoner #4630893				
-DartAtRingMaster	AH WHAT HAPPENED	I CAN'T SEE	wait....	... don't leave me here like this...	... I don't want to be alone...			
+Puzzle4Failed	Aww... too bad. I really thought you had that one...	Welp, it was a pleasure to be your ring master but now I believe it's your time to die!	Wave goodbye to the audience!	Executing prisoner #4630893	Bye!!!				
+DartAtButton	WAIT!	Please don't leave me alone...	... Please...			

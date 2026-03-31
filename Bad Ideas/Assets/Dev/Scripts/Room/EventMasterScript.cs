@@ -194,12 +194,25 @@ public class EventMasterScript : MonoBehaviour
         yield return StartCoroutine(FiveMinTimer("Puzzle4Failed", 10));
     }
 
+    public void StopCo()
+    {
+        StopAllCoroutines();
+    }
+
     private IEnumerator FiveMinTimer(string timerName, int actualTime = 300)
     {
         yield return WaitForSeconds(actualTime);
 
         speech.PlayDialogue(timerName);
     }
+
+    public void SecondEnding()
+    {
+        StartCoroutine(SpinCarousel());
+        speech.PlayDialogue("DartAtButton");
+
+        transforms["dart"].gameObject.SetActive(true);
+    } 
 
     private IEnumerator SpinCarousel()
     {

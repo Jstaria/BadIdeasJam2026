@@ -6,6 +6,7 @@ using UnityEngine.UIElements;
 using UnityEngine.InputSystem;
 using Cursor = UnityEngine.Cursor;
 using System.Threading;
+using UnityEngine.SocialPlatforms;
 
 public class PauseUIScript : MonoBehaviour
 {
@@ -84,5 +85,12 @@ public class PauseUIScript : MonoBehaviour
 
             Application.Quit();
 
+    }
+
+    public void UnStick()
+    {
+        Time.timeScale = 1f;
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 }
